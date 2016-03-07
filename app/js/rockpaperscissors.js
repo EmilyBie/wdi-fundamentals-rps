@@ -25,22 +25,20 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    var _move = move;
-    if (!_move) {
-    	_move = getInput();
+    if (!move) {
+    	move = getInput();
     }
-    return _move;
+    return move;
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    var _move = move;
-    if (!_move) {
-    	_move = randomPlay();
+    if (!move) {
+    	move = randomPlay();
     }
-    return _move;
+    return move;
 }
 
 function getWinner(playerMove,computerMove) {
@@ -59,12 +57,13 @@ function getWinner(playerMove,computerMove) {
     			break;
     		case 'scissors':
     			winner = 'player';
+                break;
     		default:
     			console.log("computer did not make the right move.")
     	}
 
     } else if (playerMove == 'paper') {
-    	witch (computerMove) {
+    	switch (computerMove) {
     		case 'rock': 
     			winner = 'player';
     			break;
@@ -73,6 +72,7 @@ function getWinner(playerMove,computerMove) {
     			break;
     		case 'scissors':
     			winner = 'computer';
+                break;
     		default:
     			console.log("computer did not make the right move.")
     	}
@@ -87,6 +87,7 @@ function getWinner(playerMove,computerMove) {
     			break;
     		case 'scissors':
     			winner = 'tie';
+                break;
     		default:
     			console.log("computer did not make the right move.")
     	}
