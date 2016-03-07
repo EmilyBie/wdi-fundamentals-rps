@@ -25,22 +25,22 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    var move;
-    if (!move) {
-    	move = getInput();
+    var _move = move;
+    if (!_move) {
+    	_move = getInput();
     }
-    return move;
+    return _move;
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    var move;
-    if (!move) {
-    	move = randomPlay();
+    var _move = move;
+    if (!_move) {
+    	_move = randomPlay();
     }
-    return move;
+    return _move;
 }
 
 function getWinner(playerMove,computerMove) {
@@ -49,6 +49,51 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+    if(playerMove == 'rock') {
+    	switch (computerMove) {
+    		case 'rock': 
+    			winner = 'tie';
+    			break;
+    		case 'paper':
+    			winner = 'computer';
+    			break;
+    		case 'scissors':
+    			winner = 'player';
+    		default:
+    			console.log("computer did not make the right move.")
+    	}
+
+    } else if (playerMove == 'paper') {
+    	witch (computerMove) {
+    		case 'rock': 
+    			winner = 'player';
+    			break;
+    		case 'paper':
+    			winner = 'tie';
+    			break;
+    		case 'scissors':
+    			winner = 'computer';
+    		default:
+    			console.log("computer did not make the right move.")
+    	}
+
+    } else if (playerMove == 'scissors') {
+    	witch (computerMove) {
+    		case 'rock': 
+    			winner = 'computer';
+    			break;
+    		case 'paper':
+    			winner = 'player';
+    			break;
+    		case 'scissors':
+    			winner = 'tie';
+    		default:
+    			console.log("computer did not make the right move.")
+    	}
+
+    } else {
+    	console.log("Player did not give the right move.");
+    }
     return winner;
 }
 
