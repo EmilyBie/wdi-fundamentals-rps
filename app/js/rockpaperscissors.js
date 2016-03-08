@@ -78,7 +78,7 @@ function getWinner(playerMove,computerMove) {
     	}
 
     } else if (playerMove == 'scissors') {
-    	witch (computerMove) {
+    	switch (computerMove) {
     		case 'rock': 
     			winner = 'computer';
     			break;
